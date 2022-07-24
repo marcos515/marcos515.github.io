@@ -45,3 +45,121 @@ body {
   font-size: 1.6rem;
   letter-spacing: 0.2rem;
 }
+
+i{
+  color:#fff;
+  font-size:1em;
+  cursor:pointer;
+}
+.devicon-android-plain:hover{
+  color: #A4C439;
+  transition: color 0.5s ease;
+}
+.devicon-apple-original:hover{
+  color: #727272;
+  transition: color 0.5s ease;
+}
+.devicon-windows8-original:hover{
+  color: #00ADEF;
+  transition: color 0.5s ease;
+}
+.devicon-dot-net-plain-wordmark:hover{
+  color: #1384C8;
+  transition: color 0.5s ease;
+}
+.devicon-c-line:hover{
+  color: #03599C;
+  transition: color 0.5s ease;
+}
+.devicon-java-plain-wordmark:hover{
+  color: #EA2D2E;
+  transition: color 0.5s ease;
+}
+.devicon-javascript-plain:hover{
+  color: #F0DB4F;
+  transition: color 0.5s ease;
+}
+.devicon-php-plain:hover{
+  color: #6181B6;
+  transition: color 0.5s ease;
+}
+.devicon-python-plain-wordmark:hover{
+  color: #FFD845;
+  transition: color 0.5s ease;
+}
+.devicon-ruby-plain-wordmark:hover{
+  color: #D91404;
+  transition: color 0.5s ease;
+}
+.devicon-rails-plain-wordmark:hover{
+  color: #A62C46;
+  transition: color 0.5s ease;
+}
+.devicon-backbonejs-plain:hover{
+  color: #002A41;
+  transition: color 0.5s ease;
+}
+.devicon-angularjs-plain:hover{
+  color: #C4473A;
+  transition: color 0.5s ease;
+}
+.devicon-nodejs-plain:hover{
+  color: #83CD29;
+  transition: color 0.5s ease;
+}
+.devicon-mysql-plain:hover{
+  color: #00618A;
+  transition: color 0.5s ease;
+}
+.devicon-postgresql-plain:hover{
+  color: #336791;
+  transition: color 0.5s ease;
+}
+.devicon-mongodb-plain:hover{
+  color: #4FAA41;
+  transition: color 0.5s ease;
+}
+.devicon-codeigniter-plain-wordmark:hover{
+  color: #EE4323;
+  transition: color 0.5s ease;
+}
+.devicon-laravel-plain-wordmark:hover{
+  color: #FD4F31;
+  transition: color 0.5s ease;
+}
+.devicon-drupal-plain-wordmark:hover{
+  color: #0073BA;
+  transition: color 0.5s ease;
+}
+.devicon-moodle-plain:hover{
+  color: #F7931E;
+  transition: color 0.5s ease;
+}
+.devicon-wordpress-plain:hover{
+  color: #494949;
+  transition: color 0.5s ease;
+}
+.devicon-html5-plain-wordmark:hover{
+  color: #E54D26;
+  transition: color 0.5s ease;
+}
+.devicon-css3-plain-wordmark:hover{
+  color: #3D8FC6;
+  transition: color 0.5s ease;
+}
+.devicon-jquery-plain-wordmark:hover{
+  color: #0769AD;
+  transition: color 0.5s ease;
+}
+.devicon-bootstrap-plain-wordmark:hover{
+  color: #59407F;
+  transition: color 0.5s ease;
+}
+.devicon-less-plain-wordmark:hover{
+  color: #2A4D80;
+  transition: color 0.5s ease;
+}
+.devicon-sass-original:hover{
+  color: #C69;
+  transition: color 0.5s ease;
+}
