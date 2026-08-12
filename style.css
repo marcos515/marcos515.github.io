@@ -1,61 +1,507 @@
+/* Marcos Vinícius Cardoso — currículo
+   HTML/CSS puro, sem dependências externas. Estrutura semântica para leitura
+   por pessoas, buscadores e sistemas automatizados de triagem. */
+
+:root {
+  --ink: #1a2129;
+  --ink-soft: #4a5460;
+  --ink-faint: #6b7681;
+  --accent: #1f3a5f;
+  --accent-soft: #e8edf3;
+  --rule: #dfe4ea;
+  --bg: #ffffff;
+  --bg-soft: #f7f9fb;
+  --max: 880px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --ink: #e6eaee;
+    --ink-soft: #b3bcc6;
+    --ink-faint: #8b96a2;
+    --accent: #9dbde2;
+    --accent-soft: #1e2833;
+    --rule: #2c3540;
+    --bg: #141a20;
+    --bg-soft: #1a2129;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  max-width: 900px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 3rem 1.5rem 4rem;
+  max-width: var(--max);
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  font-feature-settings: "kern" 1;
+  text-rendering: optimizeLegibility;
 }
-header, footer {
-  background-color: #f4f4f4;
-  padding: 20px;
-}
-h1, h2 {
-  color: #2c3e50;
-}
-h3 {
-  color: #34495e;
-}
-section {
-  margin-bottom: 30px;
-}
-ul {
-  padding-left: 0;
-  margin: 0;
-}
-.contact-info a {
-  color: #2980b9;
+
+a {
+  color: var(--accent);
   text-decoration: none;
+  border-bottom: 1px solid transparent;
 }
+
+a:hover,
+a:focus-visible {
+  border-bottom-color: currentColor;
+}
+
+/* ---------- cabeçalho ---------- */
+
+.site-header {
+  padding-bottom: 1.75rem;
+  border-bottom: 3px solid var(--accent);
+  margin-bottom: 2.5rem;
+}
+
+.site-header h1 {
+  margin: 0;
+  font-size: 2.4rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.headline {
+  margin: 0.5rem 0 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.01em;
+}
+
+.subheadline {
+  margin: 0.35rem 0 0;
+  font-size: 0.98rem;
+  color: var(--ink-soft);
+}
+
+.location {
+  margin: 0.35rem 0 0;
+  font-size: 0.92rem;
+  color: var(--ink-faint);
+}
+
+.contact-info {
+  list-style: none;
+  margin: 1.1rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.4rem;
+  font-size: 0.94rem;
+}
+
+.contact-info li {
+  position: relative;
+}
+
+.contact-info li + li::before {
+  content: "";
+  position: absolute;
+  left: -0.75rem;
+  top: 0.45em;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: var(--ink-faint);
+}
+
+/* ---------- seções ---------- */
+
+section {
+  margin-bottom: 2.75rem;
+}
+
+h2 {
+  margin: 0 0 1.25rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+h3 {
+  margin: 0;
+  font-size: 1.08rem;
+  font-weight: 650;
+  color: var(--ink);
+}
+
+p {
+  margin: 0 0 0.85rem;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+strong {
+  font-weight: 650;
+  color: var(--ink);
+}
+
+code {
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.88em;
+  padding: 0.05em 0.3em;
+  border-radius: 3px;
+  background-color: var(--accent-soft);
+}
+
+/* ---------- destaques ---------- */
+
+.highlights {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.7rem;
+}
+
+.highlights li {
+  padding-left: 1.1rem;
+  position: relative;
+  color: var(--ink-soft);
+}
+
+.highlights li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 5px;
+  height: 5px;
+  background-color: var(--accent);
+  border-radius: 1px;
+}
+
+/* ---------- experiência ---------- */
+
+#experiencia article,
+#formacao article {
+  margin-bottom: 2rem;
+  break-inside: avoid;
+}
+
+#experiencia article:last-child,
+#formacao article:last-child {
+  margin-bottom: 0;
+}
+
 .job-title {
-  font-weight: bold;
-  font-size: 1.1em;
+  font-size: 1.12rem;
+  font-weight: 700;
 }
-.job-date, .education-date {
-  font-style: italic;
-  color: #666;
+
+.job-meta,
+.education-meta {
+  margin: 0.15rem 0 0.7rem;
+  font-size: 0.92rem;
+  color: var(--ink-faint);
 }
-.achievement {
-  margin-bottom: 15px;
+
+.company {
+  font-weight: 600;
+  color: var(--ink-soft);
 }
-.achievement-medal {
-  font-weight: bold;
-  color: #c0392b;
-  margin-right: 5px;
+
+#experiencia ul {
+  margin: 0 0 0.8rem;
+  padding-left: 1.15rem;
 }
-.skills-list, .tools-list {
-  column-count: 4;
-  column-gap: 15px;
-  list-style-type: disc;
-  list-style-position: inside;
-  padding-left: 0;
+
+#experiencia li {
+  margin-bottom: 0.4rem;
+  color: var(--ink-soft);
+}
+
+.stack {
+  margin: 0;
+  padding: 0.55rem 0.75rem;
+  background-color: var(--bg-soft);
+  border-left: 3px solid var(--rule);
+  font-size: 0.88rem;
+  color: var(--ink-faint);
+}
+
+.stack strong {
+  color: var(--ink-soft);
+}
+
+/* ---------- projetos ---------- */
+
+.project {
+  margin-bottom: 1.6rem;
+  padding-bottom: 1.6rem;
+  border-bottom: 1px solid var(--rule);
+  break-inside: avoid;
+}
+
+.project:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.project-role {
+  margin: 0.15rem 0 0.55rem;
+  font-size: 0.9rem;
+  color: var(--ink-faint);
+}
+
+.project p:not(.project-role):not(.project-tech) {
+  color: var(--ink-soft);
+}
+
+.project-tech {
+  margin: 0.55rem 0 0;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.project ul {
+  margin: 0 0 0.8rem;
+  padding-left: 1.15rem;
+}
+
+.project li {
+  margin-bottom: 0.4rem;
+  color: var(--ink-soft);
+}
+
+/* seção mobile: mesmo peso visual da experiência */
+#mobile .project h3 {
+  font-size: 1.12rem;
+  font-weight: 700;
+}
+
+/* ---------- competências ---------- */
+
+.skills {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 13rem 1fr;
+  gap: 0.9rem 1.5rem;
+}
+
+.skills dt {
+  font-weight: 650;
+  color: var(--ink);
+  font-size: 0.95rem;
+}
+
+.skills dd {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+/* ---------- conquistas, certificações, idiomas ---------- */
+
+.achievements {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.achievements li {
+  margin-bottom: 0.85rem;
+  color: var(--ink-soft);
+}
+
+.achievements li:last-child {
+  margin-bottom: 0;
+}
+
+.medal {
+  display: inline-block;
+  margin-right: 0.5rem;
+  padding: 0.08rem 0.5rem;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.certifications,
+.languages {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(19rem, 1fr));
+  gap: 0.45rem 1.5rem;
+  color: var(--ink-soft);
+}
+
+.certifications li {
+  padding-left: 1.1rem;
+  position: relative;
+}
+
+.certifications li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 5px;
+  height: 5px;
+  background-color: var(--rule);
+  border-radius: 50%;
+}
+
+/* ---------- rodapé ---------- */
+
+footer {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--ink-faint);
+}
+
+footer p {
   margin: 0;
 }
-.skills-list li, .tools-list li {
-  margin-bottom: 5px;
+
+/* ---------- responsivo ---------- */
+
+@media (max-width: 640px) {
+  body {
+    padding: 2rem 1.1rem 3rem;
+    font-size: 15px;
+  }
+
+  .site-header h1 {
+    font-size: 1.85rem;
+  }
+
+  .headline {
+    font-size: 1.05rem;
+  }
+
+  .contact-info {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .contact-info li + li::before {
+    display: none;
+  }
+
+  .skills {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .skills dd {
+    margin-bottom: 0.75rem;
+  }
 }
-.footer-text {
-  text-align: center;
-  font-size: 0.9em;
-  color: #777;
+
+/* ---------- impressão / exportação em PDF ---------- */
+
+@media print {
+  :root {
+    --ink: #000;
+    --ink-soft: #1f1f1f;
+    --ink-faint: #444;
+    --accent: #1f3a5f;
+    --accent-soft: #fff;
+    --rule: #bbb;
+    --bg: #fff;
+    --bg-soft: #fff;
+  }
+
+  @page {
+    margin: 14mm 15mm;
+  }
+
+  body {
+    padding: 0;
+    max-width: none;
+    font-size: 10.5pt;
+    line-height: 1.45;
+  }
+
+  a {
+    color: #000;
+    border-bottom: none;
+  }
+
+  section {
+    margin-bottom: 1.4rem;
+  }
+
+  h2 {
+    break-after: avoid;
+    margin-bottom: 0.7rem;
+  }
+
+  h3 {
+    break-after: avoid;
+  }
+
+  .site-header {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .site-header h1 {
+    font-size: 20pt;
+  }
+
+  .stack {
+    border-left: 2px solid #bbb;
+    padding: 0.3rem 0.5rem;
+  }
+
+  /* blocos curtos não se partem; os longos fluem, para não deixar
+     páginas pela metade */
+  #projetos .project,
+  #formacao article,
+  .achievements li {
+    break-inside: avoid;
+  }
+
+  #mobile .project,
+  #experiencia article {
+    break-inside: auto;
+    margin-bottom: 1.2rem;
+  }
+
+  .job-meta,
+  .project-role {
+    break-after: avoid;
+  }
+
+  .stack {
+    break-before: avoid;
+  }
 }
