@@ -3,6 +3,8 @@
    por pessoas, buscadores e sistemas automatizados de triagem. */
 
 :root {
+  color-scheme: light;
+
   --ink: #1a2129;
   --ink-soft: #4a5460;
   --ink-faint: #6b7681;
@@ -12,19 +14,6 @@
   --bg: #ffffff;
   --bg-soft: #f7f9fb;
   --max: 880px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --ink: #e6eaee;
-    --ink-soft: #b3bcc6;
-    --ink-faint: #8b96a2;
-    --accent: #9dbde2;
-    --accent-soft: #1e2833;
-    --rule: #2c3540;
-    --bg: #141a20;
-    --bg-soft: #1a2129;
-  }
 }
 
 *,
